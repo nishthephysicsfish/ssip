@@ -40,20 +40,17 @@
     }
     /* Headshot image container */
     .headshot-container {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.headshot-container img {
-  width: 150px;
-  height: 150px;
-  object-fit: contain; /* change from cover to contain to avoid cropping */
-  border-radius: 50%;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-  background-color: #fff; /* Optional: background for empty space */
-  display: inline-block;
-}
-
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .headshot-container img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover; /* fill circle and crop as needed */
+      border-radius: 50%; /* circular shape */
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      display: inline-block;
+    }
     h1 {
       color: #295685;
       text-align: center;
@@ -88,11 +85,11 @@
 </head>
 <body>
   <nav>
-  <a href="index.html" class="active">Home</a>
-  <a href="about.html">About</a>
-  <a href="lectures.html">Research Lectures</a>
-  <a href="2025.html">2025</a>
-</nav>
+    <a href="index.html">Home</a>
+    <a href="about.html" class="active">About</a>
+    <a href="lectures.html">Research Lectures</a>
+    <a href="2025.html">2025</a>
+  </nav>
 
   <div class="headshot-container">
     <img src="Headshot_Tikalal.jpg" alt="Nishtha Tikalal Professional Headshot" />

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Research Lectures - Synaptic Scholars Initiative</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #e9f5ff;
+      color: #13304b;
+      padding: 20px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+    nav {
+      background: #fffae3;
+      padding: 15px 30px;
+      display: flex;
+      gap: 20px;
+      box-shadow: 0 2px 6px rgba(0,30,60,0.06);
+      margin-bottom: 30px;
+    }
+    nav a {
+      color: #13304b;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 18px;
+      border-radius: 20px;
+      background: #d7ecfb;
+      transition: background 0.3s ease, color 0.3s ease;
+      letter-spacing: 0.8px;
+    }
+    nav a:hover, nav a.active {
+      background: #fffbe1;
+      color: #c47515;
+    }
+    h1 {
+      color: #295685;
+      text-align: center;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+    }
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 24px;
+    }
+    form#pdf-upload-form {
+      background: #fffbe1;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 32px;
+      box-shadow: 0 2px 6px rgba(196, 117, 21, 0.18);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    input[type="file"] {
+      font-size: 1.05rem;
+      border: none;
+    }
+    button[type="submit"] {
+      background-color: #295685;
+      color: #fff;
+      font-weight: 600;
+      padding: 8px 22px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button[type="submit"]:hover {
+      background: #c47515;
+    }
+    ul.lectures {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    ul.lectures li {
+      margin-bottom: 16px;
+      background: #fffbe1;
+      padding: 15px 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(196, 117, 21, 0.25);
+      font-size: 1.05rem;
+    }
+    ul.lectures li a {
+      color: #13304b;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    ul.lectures li a:hover {
+      color: #c47515;
+      text-decoration: underline;
+    }
+    @media (max-width: 600px) {
+      body {
+        padding: 10px 15px;
+      }
+      nav {
+        flex-direction: column;
+        gap: 10px;
+        padding: 12px 10px;
+      }
+      nav a {
+        padding: 8px 14px;
+        font-size: 1rem;
+      }
+      ul.lectures li, form#pdf-upload-form {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="lectures.html" class="active">Research Lectures</a>
+    <a href="2025.html">2025</a>
+  </nav>
+
+  <h1>Research Lectures</h1>
+  
+  <p>
+    Welcome to the Research Lectures section of the Synaptic Scholars Initiative Program. Use the form below to upload lecture PDFs directly. Accepted file type: <b>PDF (application/pdf)</b>. Uploaded lectures will be listed for download.
+  </p>
+
+  <form id="pdf-upload-form" action="upload.php" method="POST" enctype="multipart/form-data">
+    <label for="pdf-file">Upload lecture PDF:</label>
+    <input type="file" id="pdf-file" name="pdf-file" accept="application/pdf" required>
+    <button type="submit">Upload PDF</button>
+  </form>
+
+  <ul class="lectures">
+    <!-- Replace with server-populated PDF links -->
+    <li>
+      <a href="uploads/Research_Methodology.pdf" target="_blank" rel="noopener noreferrer">Introduction to Research Methodology</a>
+    </li>
+    <li>
+      <a href="uploads/Skills_Effective_Research.pdf" target="_blank" rel="noopener noreferrer">Skills for Effective Research & Poster Etiquette</a>
+    </li>
+    <li>
+      <a href="uploads/BrainBee_Research_Seminar.pdf" target="_blank" rel="noopener noreferrer">Recorded Seminar: Brain Bee Research Opportunities</a>
+    </li>
+    <!-- Add more lecture links as needed -->
+  </ul>
+  
+</body>
+</html>

@@ -59,16 +59,23 @@
       border-radius: 12px;
       box-shadow: 0 2px 6px rgba(196, 117, 21, 0.25);
       font-size: 1.05rem;
-    }
-    ul.lectures li a {
+      cursor: pointer;
       color: #13304b;
       font-weight: 600;
-      text-decoration: none;
+      user-select: none;
       transition: color 0.2s;
     }
-    ul.lectures li a:hover {
+    ul.lectures li:hover {
       color: #c47515;
       text-decoration: underline;
+    }
+    #pdf-viewer {
+      width: 100%;
+      height: 600px;
+      border: 1px solid #c4c4c4;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(196, 117, 21, 0.25);
+      margin-top: 30px;
     }
     @media (max-width: 600px) {
       body {
@@ -86,6 +93,10 @@
       ul.lectures li {
         font-size: 1rem;
       }
+      #pdf-viewer {
+        height: 400px;
+        margin-top: 20px;
+      }
     }
   </style>
 </head>
@@ -100,21 +111,32 @@
   <h1>Research Lectures</h1>
   
   <p>
-    Welcome to the Research Lectures section of the Synaptic Scholars Initiative Program. Below are direct links to lecture PDFs uploaded to this site.
+    Welcome to the Research Lectures section of the Synaptic Scholars Initiative Program. Click any lecture below to view the presentation directly.
   </p>
 
-  <ul class="lectures">
-    <li>
-      <a href="Introduction_to_Research.pdf" target="_blank" rel="noopener noreferrer">Introduction to Research</a>
-    </li>
-    <li>
-      <a href="Scientific_Communication_Writing_and_Presenting_with_Impact.pdf" target="_blank" rel="noopener noreferrer">Scientific Communication Writing and Presenting with Impact</a>
-    </li>
-    <li>
-      <a href="Ethics_in_Research.pdf" target="_blank" rel="noopener noreferrer">Ethics in Research</a>
-    </li>
-    <!-- Add more lecture links as needed -->
+  <ul class="lectures" id="lecture-list">
+    <li data-pdf="Introduction_to_Research.pdf">Introduction to Research</li>
+    <li data-pdf="Scientific_Communication_Writing_and_Presenting_with_Impact.pdf">Scientific Communication Writing and Presenting with Impact</li>
+    <li data-pdf="Ethics_in_Research.pdf">Ethics in Research</li>
+    <!-- Add more lectures here as needed -->
   </ul>
   
+  <iframe id="pdf-viewer" src="" type="application/pdf" frameborder="0"></iframe>
+
+  <script>
+    const lectureList = document.getElementById('lecture-list');
+    const pdfViewer = document.getElementById('pdf-viewer');
+
+    lectureList.addEventListener('click', e => {
+      const li = e.target.closest('li');
+      if (!li) return;
+      const pdfFile = li.getAttribute('data-pdf');
+      if (pdfFile) {
+        pdfViewer.src = pdfFile;
+        // Optionally scroll down to iframe when link clicked
+        pdfViewer.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  </script>
 </body>
 </html>
